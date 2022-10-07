@@ -4,3 +4,7 @@
         'src/partials/typography',
         'src/partials/variables';
 
+.container {
+    display: flex;
+    justify-content: center;
+}
