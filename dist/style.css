@@ -12,7 +12,14 @@ body {
   height: 100vh;
 }
 
-/****** TRANSITIONS & ANIMATIONS ******/ /****** GEMUNU LIBRE - 200 - EXTRA LIGHT ******/
+/****** TRANSITIONS & ANIMATIONS ******/
+@media only screen and (max-width: 1270px) {
+  .container {
+    overflow-x: scroll;
+    font-size: 1.1rem;
+  }
+}
+/****** GEMUNU LIBRE - 200 - EXTRA LIGHT ******/
 @font-face {
   font-family: Gemunu Libre;
   font-weight: 200;
