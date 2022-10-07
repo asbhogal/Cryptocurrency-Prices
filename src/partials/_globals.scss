@@ -8,11 +8,14 @@
 }
 
 body {
-    background-color: $light-mode-background-color;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+body {
+    background-color: $light-mode-background-color;
     @include cross-browser-support-transition-set;
     .container {
         border: $light-mode-border;
