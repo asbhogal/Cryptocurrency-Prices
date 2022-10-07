@@ -9,13 +9,16 @@ fetch(`${baseCryptoSrc}`, {
 }).then((Response) => {
     if(Response.ok) {
         Response.json().then((json) => {
-            console.log(json);
-
             let cryptoBitcoinData = json.bitcoin;
             console.log(cryptoBitcoinData);
+            document.getElementById("bitcoin-USD").innerHTML = cryptoBitcoinData.usd;
+            document.getElementById("bitcoin-USD-market-cap").innerHTML = cryptoBitcoinData.usd_market_cap;
+            document.getElementById("bitcoin-24hr-vol").innerHTML = cryptoBitcoinData.usd_24h_vol;
+            document.getElementById("bitcoin-24hr-change").innerHTML = (Math.round(cryptoBitcoinData.usd_24h_change * 10) / 10);
 
             let cryptoEthereumData = json.ethereum;
             console.log(cryptoEthereumData);
+            
 
             let cryptoDogecoinData = json.dogecoin;
             console.log(cryptoDogecoinData);
