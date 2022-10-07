@@ -18,10 +18,17 @@ fetch(`${baseCryptoSrc}`, {
 
             let cryptoEthereumData = json.ethereum;
             console.log(cryptoEthereumData);
-            
+            document.getElementById("ethereum-USD").innerHTML = cryptoEthereumData.usd;
+            document.getElementById("ethereum-USD-market-cap").innerHTML = cryptoEthereumData.usd_market_cap;
+            document.getElementById("ethereum-24hr-vol").innerHTML = cryptoEthereumData.usd_24h_vol;
+            document.getElementById("ethereum-24hr-change").innerHTML = (Math.round(cryptoEthereumData.usd_24h_change * 10) / 10);
 
             let cryptoDogecoinData = json.dogecoin;
             console.log(cryptoDogecoinData);
+            document.getElementById("dogecoin-USD").innerHTML = cryptoDogecoinData.usd;
+            document.getElementById("dogecoin-USD-market-cap").innerHTML = cryptoDogecoinData.usd_market_cap;
+            document.getElementById("dogecoin-24hr-vol").innerHTML = cryptoDogecoinData.usd_24h_vol;
+            document.getElementById("dogecoin-24hr-change").innerHTML = (Math.round(cryptoDogecoinData.usd_24h_change * 10) / 10);
 
             let cryptoCardanoData = json.cardano;
             console.log(cryptoCardanoData);
