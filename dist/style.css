@@ -117,9 +117,6 @@ body {
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
 }
-#btn-container .btn-toggle > .btn-icon-container .light-mode-icon {
-  color: #fac213;
-}
 
 .dark-mode .btn-icon-container {
   transform: translateX(1.1em);
@@ -127,6 +124,13 @@ body {
   -moz-transform: translateX(1.1em);
   -ms-transform: translateX(1.1em);
   -o-transform: translateX(1.1em);
+  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+}
+
+.icon-transitions {
   transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
