@@ -10,11 +10,13 @@ fetch(`${baseCryptoSrc}`, {
     if(Response.ok) {
         Response.json().then((json) => {
             console.log(json);
+            let cryptoBitcoinData = json.bitcoin;
+            console.log(cryptoBitcoinData);
         })
     }
 }).catch((error) => {
     console.log(error);
-})
+});
 
 
 
