@@ -32,6 +32,10 @@ fetch(`${baseCryptoSrc}`, {
 
             let cryptoCardanoData = json.cardano;
             console.log(cryptoCardanoData);
+            document.getElementById("cardano-USD").innerHTML = cryptoCardanoData.usd;
+            document.getElementById("cardano-USD-market-cap").innerHTML = cryptoCardanoData.usd_market_cap;
+            document.getElementById("cardano-24hr-vol").innerHTML = cryptoCardanoData.usd_24h_vol;
+            document.getElementById("cardano-24hr-change").innerHTML = (Math.round(cryptoCardanoData.usd_24h_change * 10) / 10);
 
             let cryptoTetherData = json.tether;
             console.log(cryptoTetherData);
