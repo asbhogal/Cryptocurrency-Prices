@@ -1,0 +1,15 @@
+/****** GEMUNU LIBRE - 200 - EXTRA LIGHT ******/
+
+@font-face {
+    font-family: Gemunu Libre;
+    font-weight: 200;
+    font-variant: Extra Light;
+    src:    url('/src/typography/GemunuLibre-ExtraLight.woff') format('woff'),
+            url('/src/typography/GemunuLibre-ExtraLight.woff2') format('woff2');
+    font-display: swap;
+}
+
+body {
+    font-family: 'Gemunu Libre', monospace;
+    font-weight: 200;
+}
