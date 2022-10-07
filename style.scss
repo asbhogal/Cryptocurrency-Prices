@@ -46,6 +46,7 @@
         border-radius: 50%;
         cursor: pointer;
         box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        @include cross-browser-support-transition-set;
         .light-mode-icon {
             color: #fac213;
         }
@@ -53,4 +54,9 @@
             display: none;
         }
     }
+}
+
+.dark-mode .btn-icon-container {
+    @include cross-browser-support-translate-x-set;
+    @include cross-browser-support-transition-set;
 }

@@ -20,7 +20,6 @@ body {
   transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
-  -moz-transtion: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
 }
 body .container {
@@ -34,7 +33,6 @@ body.dark-mode {
   transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
-  -moz-transtion: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
 }
 body.dark-mode .container {
@@ -83,7 +81,6 @@ body {
   transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
-  -moz-transtion: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
 }
 .container .currency-entry:hover {
@@ -92,7 +89,6 @@ body {
   transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
-  -moz-transtion: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
   cursor: pointer;
 }
@@ -116,10 +112,26 @@ body {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
 }
 #btn-container .btn-toggle > .btn-icon-container .light-mode-icon {
   color: #fac213;
 }
 #btn-container .btn-toggle > .btn-icon-container .dark-mode-icon {
   display: none;
+}
+
+.dark-mode .btn-icon-container {
+  transform: translateX(1.1em);
+  -webkit-transform: translateX(1.1em);
+  -moz-transform: translateX(1.1em);
+  -ms-transform: translateX(1.1em);
+  -o-transform: translateX(1.1em);
+  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
 }/*# sourceMappingURL=style.css.map */
