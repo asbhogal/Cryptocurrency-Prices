@@ -5,8 +5,7 @@
 }
 
 body {
-  background-image: url("/src/mesh-gradient.png");
-  background-size: auto;
+  background-color: rgba(0, 0, 0, 0.8156862745);
   display: flex;
   justify-content: center;
   align-items: center;
