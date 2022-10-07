@@ -120,9 +120,6 @@ body {
 #btn-container .btn-toggle > .btn-icon-container .light-mode-icon {
   color: #fac213;
 }
-#btn-container .btn-toggle > .btn-icon-container .dark-mode-icon {
-  display: none;
-}
 
 .dark-mode .btn-icon-container {
   transform: translateX(1.1em);
