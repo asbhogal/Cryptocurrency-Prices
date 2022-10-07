@@ -39,19 +39,12 @@ fetch(`${baseCryptoSrc}`, {
 
             let cryptoTetherData = json.tether;
             console.log(cryptoTetherData);
+            document.getElementById("tether-USD").innerHTML = cryptoBitcoinData.usd;
+            document.getElementById("tether-USD-market-cap").innerHTML = cryptoTetherData.usd_market_cap;
+            document.getElementById("tether-24hr-vol").innerHTML = cryptoTetherData.usd_24h_vol;
+            document.getElementById("tether-24hr-change").innerHTML = (Math.round(cryptoTetherData.usd_24h_change * 10) / 10)
         })
     }
 }).catch((error) => {
     console.log(error);
 });
-
-
-
-
-    /*.then(res => res.json())
-    .then(data => console.log(data))*/
-
-/*async function catchCryptoData() {
-    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ctether%2CBNB%2CUSD%20coin%2CXRP%2CBinance%20USD%2CCardano%2CSolana%2CDogecoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true')
-    document.body = response;
-}*/
