@@ -10,8 +10,21 @@ fetch(`${baseCryptoSrc}`, {
     if(Response.ok) {
         Response.json().then((json) => {
             console.log(json);
+
             let cryptoBitcoinData = json.bitcoin;
             console.log(cryptoBitcoinData);
+
+            let cryptoEthereumData = json.ethereum;
+            console.log(cryptoEthereumData);
+
+            let cryptoDogecoinData = json.dogecoin;
+            console.log(cryptoDogecoinData);
+
+            let cryptoCardanoData = json.cardano;
+            console.log(cryptoCardanoData);
+
+            let cryptoTetherData = json.tether;
+            console.log(cryptoTetherData);
         })
     }
 }).catch((error) => {
