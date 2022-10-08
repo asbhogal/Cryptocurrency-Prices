@@ -58,3 +58,16 @@
 .icon-transitions {
     @include cross-browser-support-transition-set;
 }
+
+.spin-animations {
+    animation: spin 0.5s;
+    -webkit-animation: spin 0.5s;
+    -moz-animation: spin 0.5s;
+    -o-animation: spin 0.5s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -19,4 +19,8 @@ btnToggle.addEventListener('click', () => {
         document.querySelector('.mode-icon').innerHTML = "light_mode";
         document.querySelector('.mode-icon').style.color = "#fac213";
     }
+
+    setTimeout ( () => {
+        modeIcon.classList.remove('spin-animations');
+    }, 500)
 });
