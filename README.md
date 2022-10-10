@@ -8,7 +8,7 @@
 A live cryptocurrency price which uses CoinGecko's API and .fetch() to return a list of 5 cryptocurrency units and their current value in USD. The interface also features a light/dark mode toggle and saves user preferences via local storage. This repo is currently under development.
 
 <strong>Features</strong>
- - Live price list using .fetch and Coin Gecko API
+ - Live price list via Coin Gecko API using .fetch()
  - Light & dark mode toggle
  - User color scheme saved in local storage
  - Modern, stylish theme
