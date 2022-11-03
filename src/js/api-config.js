@@ -3,6 +3,7 @@ const baseCryptoSrc = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin
 fetch(`${baseCryptoSrc}`, {
     method: "GET",
 }).then((Response) => {
+    
     if(Response.ok) {
         Response.json().then((json) => {
 
