@@ -19,11 +19,10 @@
   },
   "homepage": "https://github.com/asbhogal/Cryptocurrency-Prices#readme",
   "devDependencies": {
-    "node-sass": "^7.0.3",
-    "parcel-bundler": "^1.3.1",
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.0.0",
     "sass": "^1.55.0",
-    "terser": "^5.15.1",
-    "uuid": "^9.0.0"
+    "terser": "^5.15.1"
   },
   "resolutions": {
     "node-forge": "0.10.0"
