@@ -1,50 +1,39 @@
-const baseCryptoSrc = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ctether%2CBNB%2CUSD%20coin%2CXRP%2CBinance%20USD%2CCardano%2CSolana%2CDogecoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true";
+const BASE_CRYPTO_SRC = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ctether%2CBNB%2CUSD%20coin%2CXRP%2CBinance%20USD%2CCardano%2CSolana%2CDogecoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true";
 
-fetch(`${baseCryptoSrc}`, {
-    method: "GET",
-}).then((Response) => {
-    
-    if(Response.ok) {
-        Response.json().then((json) => {
+const getCryptoData = async () => {
 
-            console.log(json);
-            
-            let cryptoBitcoinData = json.bitcoin;
-            console.log(cryptoBitcoinData);
-            document.getElementById("bitcoin-USD").innerHTML = cryptoBitcoinData.usd;
-            document.getElementById("bitcoin-USD-market-cap").innerHTML = cryptoBitcoinData.usd_market_cap;
-            document.getElementById("bitcoin-24hr-vol").innerHTML = cryptoBitcoinData.usd_24h_vol;
-            document.getElementById("bitcoin-24hr-change").innerHTML = (Math.round(cryptoBitcoinData.usd_24h_change * 10) / 10);
+    try {
 
-            let cryptoEthereumData = json.ethereum;
-            console.log(cryptoEthereumData);
-            document.getElementById("ethereum-USD").innerHTML = cryptoEthereumData.usd;
-            document.getElementById("ethereum-USD-market-cap").innerHTML = cryptoEthereumData.usd_market_cap;
-            document.getElementById("ethereum-24hr-vol").innerHTML = cryptoEthereumData.usd_24h_vol;
-            document.getElementById("ethereum-24hr-change").innerHTML = (Math.round(cryptoEthereumData.usd_24h_change * 10) / 10);
+        const response = await fetch(BASE_CRYPTO_SRC);
 
-            let cryptoDogecoinData = json.dogecoin;
-            console.log(cryptoDogecoinData);
-            document.getElementById("dogecoin-USD").innerHTML = cryptoDogecoinData.usd;
-            document.getElementById("dogecoin-USD-market-cap").innerHTML = cryptoDogecoinData.usd_market_cap;
-            document.getElementById("dogecoin-24hr-vol").innerHTML = cryptoDogecoinData.usd_24h_vol;
-            document.getElementById("dogecoin-24hr-change").innerHTML = (Math.round(cryptoDogecoinData.usd_24h_change * 10) / 10);
+        if (response.ok) {
 
-            let cryptoCardanoData = json.cardano;
-            console.log(cryptoCardanoData);
-            document.getElementById("cardano-USD").innerHTML = cryptoCardanoData.usd;
-            document.getElementById("cardano-USD-market-cap").innerHTML = cryptoCardanoData.usd_market_cap;
-            document.getElementById("cardano-24hr-vol").innerHTML = cryptoCardanoData.usd_24h_vol;
-            document.getElementById("cardano-24hr-change").innerHTML = (Math.round(cryptoCardanoData.usd_24h_change * 10) / 10);
+            const data = await response.json();
 
-            let cryptoTetherData = json.tether;
-            console.log(cryptoTetherData);
-            document.getElementById("tether-USD").innerHTML = cryptoBitcoinData.usd;
-            document.getElementById("tether-USD-market-cap").innerHTML = cryptoTetherData.usd_market_cap;
-            document.getElementById("tether-24hr-vol").innerHTML = cryptoTetherData.usd_24h_vol;
-            document.getElementById("tether-24hr-change").innerHTML = (Math.round(cryptoTetherData.usd_24h_change * 10) / 10)
-        })
+            const cryptoDataMap = {
+                bitcoin: ["bitcoin-USD", "bitcoin-USD-market-cap", "bitcoin-24hr-vol", "bitcoin-24hr-change"],
+                ethereum: ["ethereum-USD", "ethereum-USD-market-cap", "ethereum-24hr-vol", "ethereum-24hr-change"],
+                dogecoin: ["dogecoin-USD", "dogecoin-USD-market-cap", "dogecoin-24hr-vol", "dogecoin-24hr-change"],
+                cardano: ["cardano-USD", "cardano-USD-market-cap", "cardano-24hr-vol", "cardano-24hr-change"],
+                tether: ["tether-USD", "tether-USD-market-cap", "tether-24hr-vol", "tether-24hr-change"],
+            };
+
+            for (const [crypto, ids] of Object.entries(cryptoDataMap)) {
+                const cryptoData = data[crypto];
+                document.getElementById(ids[0]).innerHTML = cryptoData.usd;
+                document.getElementById(ids[1]).innerHTML = cryptoData.usd_market_cap;
+                document.getElementById(ids[2]).innerHTML = cryptoData.usd_24h_vol;
+                document.getElementById(ids[3]).innerHTML = Math.round(cryptoData.usd_24h_change * 10) / 10;
+            }
+
+        } else {
+
+            throw new Error("Failed to fetch data");
+        }
+    } catch (error) {
+
+        console.log(error);
     }
-}).catch((error) => {
-    console.log(error);
-});
+};
+
+getCryptoData();
